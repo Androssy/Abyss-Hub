@@ -1,9 +1,9 @@
 --[[
-         _    _                     _                    _
-        / \  | |__  _   _ ___ ___  | |    ___   __ _  __| | ___ _ __
-       / _ \ | '_ \| | | / __/ __| | |   / _ \ / _` |/ _` |/ _ \ '__|
-      / ___ \| |_) | |_| \__ \__ \ | |__| (_) | (_| | (_| |  __/ |
-     /_/   \_\_.__/ \__, |___/___/ |_____\___/ \__,_|\__,_|\___|_|
+         _    _  
+        / \  | |__  _   _ ___ ___  
+       / _ \ | '_ \| | | / __/ __| 
+      / ___ \| |_) | |_| \__ \__ \ 
+     /_/   \_\_.__/ \__, |___/___/ 
                     |___/
 ]]
-local a="This file is licensed with Luarmor. You must use the actual loadstring to execute this script. Do not run this file directly. Always use the loadstring."local b="3b2e59f26e494d97df1b5b8da2db36d5"if lrm_load_script then lrm_load_script(b)while wait(1)do end end;local c="https://api.luarmor.net/files/v3/l/"..b..".lua"is_from_loader={Mode="fastload"}local d=0.03;l_fastload_enabled=function(e)if e=="flush"then wait(d)d=d+2;local f,g;local h,i=pcall(function()g=game:HttpGet(c)pcall(writefile,b.."-cache.lua","-- "..a.."\n\n if not is_from_loader then warn('Use the loadstring, do not run this directly') return end;\n "..g)wait(0.1)f=loadstring(g)end)if not h or not f then pcall(writefile,"lrm-err-loader-log-httpresp.txt",tostring(g))warn("Error while executing loader. Err:"..tostring(i).." See lrm-err-loader-log-httpresp.txt in your workspace.")return end;f(is_from_loader)end;if e=="rl"then pcall(writefile,b.."-cache.lua","recache required")wait(0.2)pcall(delfile,b.."-cache.lua")end end;local j;local k,l=pcall(function()j=readfile(b.."-cache.lua") if (not j) or (#j < 5) then j=nil; return; end; j=loadstring(j)end)if not k or not j then l_fastload_enabled("flush")return end;j(is_from_loader)
+local a=({...})[1]local b="This file is licensed with Luarmor. You must use the actual loadstring to execute this script. Do not run this file directly. Always use the loadstring."local c="3b2e59f26e494d97df1b5b8da2db36d5"if lrm_load_script then lrm_load_script(c)(a)while wait(1)do end end;local d="https://ap".."i.luar".."mor.net/fil".."es/v3".."/l/"..c..".lua"is_from_loader={Mode="fastload"}local e=0.03;l_fastload_enabled=function(f)if f=="flush"then wait(e)e=e+2;local g,h;local i,j=pcall(function()h=game:HttpGet(d)pcall(writefile,c.."-cache.lua","-- "..b.."\n\n if not is_from_loader then warn('Use the loadstring, do not run this directly') return end;\n "..h)wait(0.1)g=loadstring(h)end)if not i or not g then pcall(writefile,"lrm-err-loader-log-httpresp.txt",tostring(h))warn("Error while executing loader. Err:"..tostring(j).." See lrm-err-loader-log-httpresp.txt in your workspace.")return end;g(a)end;if f=="rl"then pcall(writefile,c.."-cache.lua","recache required")wait(0.2)pcall(delfile,c.."-cache.lua")end end;local k;local l,m=pcall(function()k=readfile(c.."-cache.lua")k=loadstring(k)end)if not l or not k then l_fastload_enabled("flush")return end;k(a)
